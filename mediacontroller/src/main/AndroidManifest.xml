@@ -34,7 +34,7 @@
         tools:ignore="UnusedAttribute">
 
         <activity
-            android:name=".LaunchActivity"
+            android:name=".LaunchActivityFork"
             android:launchMode="singleTask">
 
             <intent-filter>

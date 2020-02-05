@@ -15,7 +15,7 @@
   -->
 
 <resources>
-    <string name="app_name">Media Controller Tester</string>
+    <string name="app_name">Forked Media Controller Tester</string>
     <string name="app_icon_desc">App icon for %1$s.</string>
     <string name="no_apps_found">No Media Apps Found</string>
     <string name="no_apps_reason_no_media_browser_service">Could not locate any apps implementing a MediaBrowserService.</string>
