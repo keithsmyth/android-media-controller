@@ -22,7 +22,11 @@ import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.graphics.drawable.VectorDrawable
 import android.net.Uri
-import android.os.*
+import android.os.Build
+import android.os.Bundle
+import android.os.Handler
+import android.os.HandlerThread
+import android.os.Message
 import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaMetadataCompat
 import android.support.v4.media.session.MediaControllerCompat
@@ -214,10 +218,10 @@ class Test(
     }
 }
 
-class TestOptionDetails(val id: Int,
+data class TestOptionDetails(val id: Int,
                         val name: String,
                         val desc: String,
-                        var testResult: TestResult,
+                        var testResult: TestResult, // TODO: val
                         val runTest: (query: String,
                                       callback: (result: TestResult, testId: Int) -> Unit,
                                       testId: Int) -> Unit)

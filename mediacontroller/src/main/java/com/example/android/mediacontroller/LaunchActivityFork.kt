@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.mediacontroller.tasks.FindMediaAppsTask
 import com.example.android.mediacontroller.tasks.FindMediaBrowserAppsTask
+import com.example.android.mediacontroller.tests.MediaAppTestingActivityFork
 
 class LaunchActivityFork : AppCompatActivity() {
 
@@ -38,7 +39,7 @@ class LaunchActivityFork : AppCompatActivity() {
     val mediaAppsAdapter = MediaAppsAdapter(object : MediaAppSelectedListener {
       override fun onMediaAppClicked(mediaAppDetails: MediaAppDetails, isTest: Boolean) {
         startActivity(
-          if (isTest) MediaAppTestingActivity.buildIntent(this@LaunchActivityFork, mediaAppDetails)
+          if (isTest) MediaAppTestingActivityFork.buildIntent(this@LaunchActivityFork, mediaAppDetails)
           else MediaAppControllerActivity.buildIntent(this@LaunchActivityFork, mediaAppDetails)
         )
       }

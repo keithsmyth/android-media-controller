@@ -33,6 +33,7 @@
 
     <!-- Tests UI -->
     <string name="tests_run_button">Run Test</string>
+    <string name="tests_results_button">View Results</string>
     <string name="tests_options_header">Tests</string>
     <string name="tests_results_header">Results</string>
     <string name="tests_query_hint">Query</string>

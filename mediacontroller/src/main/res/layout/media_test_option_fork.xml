@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  Copyright (C) 2018 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_small"
+    card_view:cardCornerRadius="4dp"
+    tools:cardBackgroundColor="@color/test_result_fail">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="@dimen/margin_small">
+
+    <TextView
+        android:id="@+id/card_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Test Name"
+        android:textSize="@dimen/tests_subheader_text_size"
+        android:textStyle="italic"
+        android:textColor="#000"
+        card_view:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/card_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Test Description"
+        card_view:layout_constraintTop_toBottomOf="@id/card_header" />
+
+    <EditText
+        android:id="@+id/query_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:hint="@string/tests_query_hint"
+        card_view:layout_constraintTop_toBottomOf="@id/card_text"
+        android:inputType="text" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        card_view:layout_constraintTop_toBottomOf="@id/query_edit_text"
+        card_view:layout_constraintEnd_toEndOf="@id/card_button"
+        card_view:layout_constraintStart_toStartOf="@id/card_button" />
+
+    <Button
+        android:id="@+id/card_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tests_run_button"
+        card_view:layout_constraintTop_toBottomOf="@id/query_edit_text"
+        card_view:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/results_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tests_results_button"
+        card_view:layout_constraintTop_toBottomOf="@id/query_edit_text"
+        card_view:layout_constraintEnd_toStartOf="@id/card_button" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
